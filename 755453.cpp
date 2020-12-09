@@ -1,31 +1,24 @@
 #include <iostream>
 using namespace std;
-#include <cmath>
-#include <random>
 int main() {
-    srand(time(NULL));
-    int a,b;
-    a=int(rand())%100;
-    int c=0,d=100;
-    do{
-      cin>>b;
-      if(a>b){
-        cout<<d<<"~"<<b+1<<"之間"<<"\n";
-        c=b+1;
-      }else if(a<b){
-        cout<<b+1<<"~"<<c<<"之間"<<"\n";
-        d=b+1;
-      }else{
-        break;
+    int N,S,M;
+    int sc=0;
+    cin>>N>>S;
+    int K[N],C[N];
+    for (int i=0;i<N;i++){
+      cin>>K[i];
+    }
+    cin>>M;
+    for(int i=0;i<M;i++){
+      for (int j=0;j<N;j++){
+        cin>>C[i];
       }
-      
-  
+    }
+    for(int p=0;p<N;p++){
+      if(K[p]==C[p]){
+        sc+=1;
+      }
+    }
 
-     
-    
-    
-    }while(a!=b);
-    cout<<"good";
+    cout<<sc*10;
 }
-
-
